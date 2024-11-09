@@ -21,9 +21,9 @@
 int		ft_strlen_gnl(char *str);
 int		ft_strchr_gnl(char *str, char c);
 char	*ft_strjoin_gnl(char *s1, char *s2);
-char	*get_line(char *dst);
-char	*get_left_line(char *buff);
-char	*read_line(char *dst, int fd);
+char	*ft_get_line(char *dst);
+char	*ft_get_left_line(char *buff);
+char	*ft_read_line(char *dst, int fd);
 char	*get_next_line(int fd);
 
 #endif
