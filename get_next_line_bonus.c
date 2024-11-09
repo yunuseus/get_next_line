@@ -12,7 +12,7 @@
 
 #include "get_next_line_bonus.h"
 
-char	*get_line(char *dst)
+char	*ft_get_line(char *dst)
 {
 	char	*ret;
 	size_t	i;
@@ -39,7 +39,7 @@ char	*get_line(char *dst)
 	return (ret);
 }
 
-char	*get_left_line(char *buff)
+char	*ft_get_left_line(char *buff)
 {
 	char	*ret;
 	size_t	i;
@@ -63,7 +63,7 @@ char	*get_left_line(char *buff)
 	return (ret);
 }
 
-char	*read_line(char *dst, int fd)
+char	*ft_read_line(char *dst, int fd)
 {
 	char	*buff;
 	int		reads;
@@ -98,10 +98,10 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buff[fd] = read_line(buff[fd], fd);
+	buff[fd] = ft_read_line(buff[fd], fd);
 	if (!buff[fd])
 		return (NULL);
-	ret = get_line(buff[fd]);
-	buff[fd] = get_left_line(buff[fd]);
+	ret = ft_get_line(buff[fd]);
+	buff[fd] = ft_get_left_line(buff[fd]);
 	return (ret);
 }
