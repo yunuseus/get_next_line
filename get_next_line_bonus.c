@@ -99,7 +99,7 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	buff[fd] = read_line(buff[fd], fd);
-	if (!buff)
+	if (!buff[fd])
 		return (NULL);
 	ret = get_line(buff[fd]);
 	buff[fd] = get_left_line(buff[fd]);
